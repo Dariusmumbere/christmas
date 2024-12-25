@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Greeting</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f5f5f5;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+            margin: 100px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #ff6347;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            padding: 12px;
+            font-size: 1.2em;
+            width: 80%;
+            margin: 20px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 12px 20px;
+            font-size: 1.2em;
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background-color: #e55337;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome!</h1>
+        <p>Please enter your name to receive a special Christmas greeting:</p>
+        <input type="text" id="nameInput" placeholder="Enter your name" required>
+        <button onclick="showGreeting()">Continue</button>
+    </div>
+
+    <script>
+        function showGreeting() {
+            const name = document.getElementById('nameInput').value;
+            if (name.trim() === "") {
+                alert("Please enter your name!");
+                return;
+            }
+            localStorage.setItem('visitorName', name);
+            window.location.href = "greeting.html"; // Redirect to greeting page
+        }
+    </script>
+
+</body>
+</html>
